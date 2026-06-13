@@ -86,3 +86,68 @@ Flags:
 
 ## 5. 🧠 WMI Persistence Detection
 Detects WMI event filters in:
+
+root\subscription
+
+
+Flags:
+- any WMI event filter presence (persistence technique used by malware)
+
+---
+
+## 6. 🔥 Firewall Rules Enumeration
+- Lists inbound firewall rules
+- Helps identify unexpected open services or applications
+
+---
+
+## 7. 📄 Dual Logging System
+
+The script generates **two separate logs**:
+
+### 📁 FULL_LOG_*.txt
+Contains:
+- complete system enumeration
+- processes
+- network connections
+- tasks
+- services
+
+### 🚨 ANOMALIES_ALERTS_*.txt
+Contains:
+- security warnings
+- suspicious behavior
+- potential indicators of compromise (IOCs)
+
+---
+
+# 📦 Output Example
+
+
+FULL_LOG_2026-06-13_12-30-00.txt
+ANOMALIES_ALERTS_2026-06-13_12-30-00.txt
+
+
+---
+
+# ⚙️ Requirements
+
+- Windows 10 / 11
+- PowerShell 5+
+- Administrator privileges (recommended)
+
+Optional (for deeper analysis):
+- Sysmon (Sysinternals)
+- Windows Defender enabled
+- Execution Policy: `RemoteSigned`
+
+---
+
+# ▶️ How to Run
+
+Open PowerShell as Administrator:
+
+```powershell
+Set-ExecutionPolicy Bypass -Scope Process -Force
+.\WindowsFSA.ps1
+
